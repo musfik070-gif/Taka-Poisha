@@ -33,9 +33,10 @@
 <!-- Main div-->
 <div class="max-w-5xl mx-auto p-6">
   <h1 class="text-3xl font-bold mb-8 text-black">Job Application Tracker</h1>
+
+     <!-- Total -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
 
-    <!-- Total -->
     <div class="bg-white p-4 rounded-lg">
       <p>Total</p>
       <h2 id="totalCount" class="text-2xl font-bold text-blue-700">0</h2>
@@ -52,24 +53,34 @@
       <p>Rejected</p>
       <h2 id="rejectedCount" class="text-2xl font-bold text-red-500">0</h2>
     </div>
+    
     </div>
 
   <!-- Available Jobs -->
   <div class="flex justify-between items-center mb-3">
-    <h2 class="font-semibold">Available Jobs</h2>
+    <h2 class="text-xl font-bold text-black">Available Jobs</h2>
     <p id="tabCount">0 jobs</p>
   </div>
 
   <!-- Button Pages  -->
-  <div class="mb-4">
-    <button class="btn btn-sm btn-primary" data-tab="all">All</button>
-    <button class="btn btn-sm" data-tab="interview">Interview</button>
-    <button class="btn btn-sm" data-tab="rejected">Rejected</button>
+  <div class="mb-4 grid grid-cols-3 gap-3 max-w-sm">
+    <button class="btn btn-sm btn-outline btn-primary" data-tab="all">All</button>
+    <button class="btn btn-sm btn-outline btn-success" data-tab="interview">Interview</button>
+    <button class="btn btn-sm btn-outline btn-error" data-tab="rejected">Rejected</button>
   </div>
+
+  <!-- Job List -->
+   <div id="jobList" class="space-y-4"></div>
+   <div id="emptyState" class="hidden bg-white rounded-lg p-20 text-center">
+    <p class="text-lg font-semibold">No jobs available now</p>
+    <p class="text-sm text-gray-500">Check back later for new job opportunities.</p>
+
+   </div>
   
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
 
