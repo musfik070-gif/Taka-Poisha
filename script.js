@@ -130,23 +130,23 @@ function renderJobs() {
     }
     const div = document.createElement("div");
     div.className =
-      "bg-white p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1";
+      "bg-white p-4 sm:p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col gap-4";
     div.innerHTML = `
-      <div class="flex justify-between">
-        <div>
-          <h3 class="text-lg font-semibold text-black">${job.company}</h3>
-          <p class="text-gray-500">${job.position}</p>
-          <p class="text-sm text-gray-400 mt-3">${job.location} • ${job.type} • ${job.salary}</p>
-          <span class="inline-block px-4 py-2 rounded mt-4 text-sm ${color}">${badge}</span>
-          <p class="mt-4 text-gray-700">${job.description}</p>
+      <div class="flex flex-col sm:flex-row justify-between gap-4">
+        <div class="flex-1">
+          <h3 class="text-base sm:text-lg font-semibold text-black">${job.company}</h3>
+          <p class="text-xs sm:text-base text-gray-500">${job.position}</p>
+          <p class="text-xs sm:text-sm text-gray-400 mt-2 sm:mt-3">${job.location} • ${job.type} • ${job.salary}</p>
+          <span class="inline-block px-3 sm:px-4 py-1 sm:py-2 rounded mt-3 sm:mt-4 text-xs sm:text-sm ${color}">${badge}</span>
+          <p class="mt-3 sm:mt-4 text-xs sm:text-base text-gray-700">${job.description}</p>
         </div>
         <!-- DELETE ICON -->
-        <button onclick="deleteJob(${job.id})" class="btn btn-circle btn-sm btn-ghost text-gray-400 hover:text-red-500 transition transform hover:scale-110">🗑️</button>
+        <button onclick="deleteJob(${job.id})" class="btn btn-circle btn-sm btn-ghost text-gray-400 hover:text-red-500 transition transform hover:scale-110 self-start sm:self-center">🗑️</button>
       </div>
       <!-- ACTION BUTTONS -->
-      <div class="mt-6 space-x-4">
-        <button class="btn btn-outline btn-success transition hover:scale-105" onclick="setStatus(${job.id}, 'interview')">INTERVIEW</button>
-        <button class="btn btn-outline btn-error transition hover:scale-105" onclick="setStatus(${job.id}, 'rejected')">REJECTED</button>
+      <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-4">
+        <button class="btn btn-outline btn-success transition hover:scale-105 w-full sm:w-auto" onclick="setStatus(${job.id}, 'interview')">INTERVIEW</button>
+        <button class="btn btn-outline btn-error transition hover:scale-105 w-full sm:w-auto" onclick="setStatus(${job.id}, 'rejected')">REJECTED</button>
       </div>
     `;
     jobList.appendChild(div);
