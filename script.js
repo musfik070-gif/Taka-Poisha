@@ -130,7 +130,7 @@ function renderJobs() {
     }
     const div = document.createElement("div");
     div.className =
-      "bg-white p-4 sm:p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col gap-4";
+      "relative bg-white p-4 sm:p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col gap-4";
     div.innerHTML = `
       <div class="flex flex-col sm:flex-row justify-between gap-4">
         <div class="flex-1">
@@ -141,7 +141,7 @@ function renderJobs() {
           <p class="mt-3 sm:mt-4 text-xs sm:text-base text-gray-700">${job.description}</p>
         </div>
         <!-- DELETE ICON -->
-        <button onclick="deleteJob(${job.id})" class="btn btn-circle btn-sm btn-ghost text-gray-400 hover:text-red-500 transition transform hover:scale-110 self-start sm:self-center">🗑️</button>
+        <button onclick="deleteJob(${job.id})" class="btn btn-circle btn-sm btn-ghost text-gray-400 hover:text-red-500 transition transform hover:scale-110 absolute top-3 right-3"">🗑️</button>
       </div>
       <!-- ACTION BUTTONS -->
       <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-2 sm:gap-4">
